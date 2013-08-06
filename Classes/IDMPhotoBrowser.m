@@ -587,10 +587,10 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
     if (SYSTEM_VERSION_LESS_THAN(@"5")) [self viewWillLayoutSubviews];
     
     // Status bar
-    if (self.wantsFullScreenLayout && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        _previousStatusBarStyle = [[UIApplication sharedApplication] statusBarStyle];
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:animated];
-    }
+//    if (self.wantsFullScreenLayout && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+//        _previousStatusBarStyle = [[UIApplication sharedApplication] statusBarStyle];
+//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:animated];
+//    }
     
     // Update UI
 	[self hideControlsAfterDelay];
@@ -601,9 +601,9 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
     [NSObject cancelPreviousPerformRequestsWithTarget:self]; // Cancel any pending toggles from taps
     
     // Status bar
-    if (self.wantsFullScreenLayout && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        [[UIApplication sharedApplication] setStatusBarStyle:_previousStatusBarStyle animated:animated];
-    }
+//    if (self.wantsFullScreenLayout && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+//        [[UIApplication sharedApplication] setStatusBarStyle:_previousStatusBarStyle animated:animated];
+//    }
     
 	// Super
 	[super viewWillDisappear:animated];
@@ -1058,23 +1058,23 @@ BOOL isFirstViewLoad = YES;
     [self cancelControlHiding];
 	
 	// Status bar and nav bar positioning
-    if (self.wantsFullScreenLayout) {
-        
-        // Get status bar height if visible
-        CGFloat statusBarHeight = 0;
-        // Get status bar height if visible
-        if (![UIApplication sharedApplication].statusBarHidden) {
-            CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
-            statusBarHeight = MIN(statusBarFrame.size.height, statusBarFrame.size.width);
-        }
-        
-        // Status Bar
-        if ([UIApplication instancesRespondToSelector:@selector(setStatusBarHidden:withAnimation:)]) {
-            [[UIApplication sharedApplication] setStatusBarHidden:hidden withAnimation:animated?UIStatusBarAnimationFade:UIStatusBarAnimationNone];
-        } else {
-            [[UIApplication sharedApplication] setStatusBarHidden:hidden withAnimation:(animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone)];
-        }
-    }
+//    if (self.wantsFullScreenLayout) {
+//        
+//        // Get status bar height if visible
+//        CGFloat statusBarHeight = 0;
+//        // Get status bar height if visible
+//        if (![UIApplication sharedApplication].statusBarHidden) {
+//            CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+//            statusBarHeight = MIN(statusBarFrame.size.height, statusBarFrame.size.width);
+//        }
+//        
+//        // Status Bar
+//        if ([UIApplication instancesRespondToSelector:@selector(setStatusBarHidden:withAnimation:)]) {
+//            [[UIApplication sharedApplication] setStatusBarHidden:hidden withAnimation:animated?UIStatusBarAnimationFade:UIStatusBarAnimationNone];
+//        } else {
+//            [[UIApplication sharedApplication] setStatusBarHidden:hidden withAnimation:(animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone)];
+//        }
+//    }
     
     // Captions
     NSMutableSet *captionViews = [[NSMutableSet alloc] initWithCapacity:_visiblePages.count];
@@ -1139,7 +1139,7 @@ BOOL isFirstViewLoad = YES;
 
 - (void)doneButtonPressed:(id)sender {
     // Status Bar
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+//    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
     
     // Gesture
     [[[[UIApplication sharedApplication]delegate]window] removeGestureRecognizer:_panGesture];
