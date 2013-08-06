@@ -21,4 +21,19 @@ Pod::Spec.new do |s|
   s.dependency 'SVProgressHUD', '~> 0.9'
 
   s.requires_arc = true
+
+  s.ios.deployment_target = '5.0'
+  s.ios.frameworks = 'MobileCoreServices', 'SystemConfiguration'
+
+  s.prefix_header_contents = <<-EOS
+#import <Availability.h>
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
+  #import <SystemConfiguration/SystemConfiguration.h>
+  #import <MobileCoreServices/MobileCoreServices.h>
+#else
+  #import <SystemConfiguration/SystemConfiguration.h>
+  #import <CoreServices/CoreServices.h>
+#endif
+
 end

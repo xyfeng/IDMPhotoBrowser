@@ -1149,8 +1149,8 @@ BOOL isFirstViewLoad = YES;
     //self.view.backgroundColor = [UIColor blackColor];
     
     [self dismissViewControllerAnimated:YES completion:^{
-        UIViewController *previousViewController = (UIViewController*)_delegate;
-        previousViewController.modalPresentationStyle = previousViewController.navigationController.modalPresentationStyle = previousViewController.tabBarController.modalPresentationStyle = 0;
+//        UIViewController *previousViewController = (UIViewController*)_delegate;
+//        previousViewController.modalPresentationStyle = previousViewController.navigationController.modalPresentationStyle = previousViewController.tabBarController.modalPresentationStyle = 0;
     }];
 }
 
