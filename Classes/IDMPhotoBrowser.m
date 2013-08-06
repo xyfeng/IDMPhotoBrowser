@@ -415,9 +415,9 @@
         _actionButtonTitles = [[NSMutableArray alloc] initWithArray:@[NSLocalizedString(@"Save", @"Save"), @"Email"]];
     
     // Gesture
-    _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(move:)];
-    [_panGesture setMinimumNumberOfTouches:1];
-    [_panGesture setMaximumNumberOfTouches:1];
+//    _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(move:)];
+//    [_panGesture setMinimumNumberOfTouches:1];
+//    [_panGesture setMaximumNumberOfTouches:1];
     
     // Update
     [self reloadData];
@@ -552,7 +552,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
     _performingLayout = NO;
     
     //[self.view.subviews[0] addGestureRecognizer:_panGesture];
-    [self.view addGestureRecognizer:_panGesture];
+//    [self.view addGestureRecognizer:_panGesture];
 }
 
 // Release any retained subviews of the main view.
@@ -1142,7 +1142,7 @@ BOOL isFirstViewLoad = YES;
 //    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
     
     // Gesture
-    [[[[UIApplication sharedApplication]delegate]window] removeGestureRecognizer:_panGesture];
+//    [[[[UIApplication sharedApplication]delegate]window] removeGestureRecognizer:_panGesture];
     
     _autoHide = NO;
     
