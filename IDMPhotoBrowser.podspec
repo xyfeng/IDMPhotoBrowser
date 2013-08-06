@@ -35,5 +35,5 @@ Pod::Spec.new do |s|
   #import <SystemConfiguration/SystemConfiguration.h>
   #import <CoreServices/CoreServices.h>
 #endif
-
+EOS
 end
